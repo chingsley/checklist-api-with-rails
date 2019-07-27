@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_22_103546) do
+ActiveRecord::Schema.define(version: 2019_07_27_161514) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2019_07_22_103546) do
     t.integer "percent"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "oauth_access_tokens", force: :cascade do |t|

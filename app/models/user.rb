@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :items
  class << self
    def authenticate(email, password)
      user = User.find_for_authentication(email: email)
