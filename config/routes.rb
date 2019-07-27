@@ -9,5 +9,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :items
+    get 'users', to: 'users#index'
   end
+
 end
