@@ -1,0 +1,147 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "checklist-api",
+    "description": "TODO: Add Description",
+    "contact": {}
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "securityDefinitions": {},
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/oauth/token": {
+      "post": {
+        "description": "user can login by providing email and password. The grant_type is also required and is set to the value 'password'",
+        "summary": "user login",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "OauthTokenPost",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "email",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "grant_type",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/users": {
+      "get": {
+        "description": "Endpoint to fetch all existing users in the database",
+        "summary": "GET all users",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "ApiUsersGet",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/items": {
+      "get": {
+        "description": "Endpoint to get all the items in the database",
+        "summary": "GET all Items",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "ApiItemsGet",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Misc",
+      "description": ""
+    }
+  ]
+}
